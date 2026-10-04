@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- saved from url=(0012)about:srcdoc -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--<base target="_blank">--><base href="." target="_blank"><script>(function(){
+    "use strict";
+    const config={"source":"javascript-playground-preview","sessionId":"8316daaf-b795-426c-a31a-74247575c991"};
+    const post=(payload)=>parent.postMessage(Object.assign({},config,payload),"*");
+    const serialize=(values)=>values.map((value)=>{
+      if(typeof value==="string") return value;
+      if(value instanceof Error) return value.stack||value.message;
+      try { const seen=new WeakSet(); return JSON.stringify(value,(key,item)=>{ if(typeof item==="bigint") return String(item)+"n"; if(typeof item==="object"&&item!==null){ if(seen.has(item)) return "[Circular]"; seen.add(item); } return item; }); }
+      catch { try { return String(value); } catch { return "[Unserializable]"; } }
+    }).join(" ");
+    for(const level of ["log","info","warn","error","debug"]){
+      const original=console[level].bind(console);
+      console[level]=(...values)=>{ post({type:"console",level,text:serialize(values),timestamp:Date.now()}); original(...values); };
+    }
+    addEventListener("error",(event)=>post({type:"runtime-error",name:event.error?.name||"Error",message:event.error?.message||event.message||"Preview runtime error",stack:event.error?.stack,timestamp:Date.now()}));
+    addEventListener("unhandledrejection",(event)=>{ const reason=event.reason; post({type:"runtime-error",name:reason?.name||"UnhandledRejection",message:reason?.message||String(reason),stack:reason?.stack,timestamp:Date.now()}); });
+    post({type:"ready"});
+  })();</script><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><script>
+  function getStudentResult() {
+  return new Promise((resolve, reject) => {
+    console.log("Requesting student result...");
+    setTimeout(() => {
+      const success = true;
+      if (success) {
+        console.log("Getting student result...");
+        resolve({
+          id: 101,
+          name: "Rahim",
+          department: "CSE",
+          marks: 85
+        });
+      } else {
+        reject("Failed to retrieve student result");
+      }
+    }, 3000);
+  });
+}
+
+async function displayResult() {
+  console.log("Getting Student Result...");
+  try {
+    const student = await getStudentResult();
+    console.log("Student Result Received");
+    console.log("ID: ", student.id);
+    console.log("Name: ", student.name);
+    console.log("Department: ", student.department);
+    console.log("Marks: ", student.marks);
+  }
+  catch(error) {
+    console.log("Error: ", error);
+  }
+}
+displayResult()
+.finally(() => {
+console.log("Result processing completed.");
+});
+
+</script></body></html>

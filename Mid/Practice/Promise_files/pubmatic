@@ -1,0 +1,1 @@
+(function(){fetch("https://image6.pubmatic.com/AdServer/UCookieSetPug?coppa=0&gdpr=0&gdpr_consent=&gpp=&gpp_sid=&p=167906&rd=https%3A%2F%2Fids.api.gcprivacy.id%2Fv1%2Frt%2Fsync%2Fpubmatic%3Fgcid%3D5a303772-3329-4a55-b7d5-459795d9530c%26pmid%3D%23PM_USER_ID&src=pbjs_uid&us_privacy=&ver=1",{credentials:'include',mode:'no-cors'}).catch(function(){});})();
