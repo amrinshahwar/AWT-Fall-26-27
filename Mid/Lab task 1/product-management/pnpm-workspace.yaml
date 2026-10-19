@@ -1,0 +1,10 @@
+allowBuilds:
+  '@parcel/watcher': true
+  '@scarf/scarf': true
+  '@swc/core': true
+  argon2: true
+  msgpackr-extract: false
+  unrs-resolver: false
+permissions:
+  dotenv:
+    skills: true
