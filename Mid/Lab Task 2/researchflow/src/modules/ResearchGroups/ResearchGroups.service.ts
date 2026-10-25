@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { ResearchGroup } from "./entities/researchgroups.entity";
+import { ResearchGroup } from "./entities/ResearchGroups.entity";
 import { Repository } from "typeorm";
 import { CreateResearchGroupDto, UpdateResearchGroupDto } from "./dto/ResearchGroups.dto";
 

@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post } from "@nestjs/common";
-import { ResearchGroupService } from "./researchgroups.service";
-import { CreateResearchGroupDto, UpdateResearchGroupDto } from "./dto/ResearchGroups.dto.";
+import { ResearchGroupService } from "./ResearchGroups.service";
+import { CreateResearchGroupDto, UpdateResearchGroupDto } from "./dto/ResearchGroups.dto";
 
 @Controller("researchgroups")
 export class ResearchGroupController {
